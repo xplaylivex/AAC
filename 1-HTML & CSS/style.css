@@ -1,0 +1,126 @@
+
+body .my_class.toto.tutu {
+	background: yellow;
+}
+
+.my_class {
+	background: red;
+	border: 10px solid black;
+}
+
+
+body #my_id {
+	background: blue;
+	border: 20px dashed black;
+}
+
+
+body div {
+	background: red;
+	border: 30px dotted black;
+}
+
+
+div:hover {
+	height: 200px;
+	width: 300px;
+	max-width: 250px;
+	max-height: 150px;
+}
+
+input:focus {
+	background: #CC3333;
+}
+
+a:active {
+	color: green;
+}
+
+ol li:first-child {
+	font-weight: bold;
+}
+
+ol li:nth-child(3) {
+	text-decoration: line-through;
+}
+
+li:first-of-type {
+	font-size: 20px;
+}
+
+hr:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+p {
+	position: relative;
+}
+
+p:before {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 5px;
+	background: purple;
+	position: absolute;
+	top: 0;
+	left: 50px;
+}
+
+table {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+form {
+	overflow: auto;
+	height: 200px;
+}
+
+input {
+	float: left;
+}
+
+select {
+	clear:both;
+}
+
+section {
+	display: none;
+}
+
+main, header {
+	display: inline;
+}
+
+footer {
+	opacity: 0.5;
+}
+
+article {
+	visibility: hidden;
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+	/* 800 < x < 1000 */
+    body div {
+    	height: 5000px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+	/* 0 < x < 800 */
+    body div {
+    	background: green;
+    }
+}
