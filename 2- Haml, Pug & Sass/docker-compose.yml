@@ -1,0 +1,11 @@
+npm:
+  build: npm
+  ports:
+    - "4242:8080"
+  volumes:
+    - ./pug_folder:/usr/src/app/pug_folder
+    - ./sass_folder:/usr/src/app/sass_folder
+ruby:
+  build: ruby
+  volumes:
+    - ./haml_folder:/var/www/app/haml_folder

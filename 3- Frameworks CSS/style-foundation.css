@@ -1,0 +1,21 @@
+html, body {
+	min-height: 100%;
+	height: 100%;
+}
+
+.container {
+    min-height: 80%;
+}
+
+.row:first-of-type {
+	min-height: 400px;
+	background: #DDD;
+	border-left: 1px solid #CC3333;
+	border-right: 1px solid #CC3333;
+}
+
+.block {
+	margin-top: 20px;
+	background: #FEFEFE;
+	min-height: 170px;
+}

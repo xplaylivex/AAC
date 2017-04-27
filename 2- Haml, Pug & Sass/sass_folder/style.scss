@@ -1,0 +1,19 @@
+.ma_classe1 {
+	.ma_classe2 {
+		.ma_classe3 {
+			.ma_classe4 {
+				.ma_classe5 {
+					color: white;
+				}
+			}
+		}
+
+		&:hover {
+			background: red;
+		}
+	}
+
+	#salut {
+		font-weight: bold
+	}
+}
