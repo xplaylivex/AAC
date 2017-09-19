@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODOLIST Vue</title>
+    <meta charset="UTF-8"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <input type="text" v-model="inputText" @keyup.enter="newTask" />
+        <ul>
+            <li v-for="(task, index) in tasks">
+                <p>{{ task }} <span @click="deleteTask(index)">x</span></p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                inputText: '',
+                tasks: []
+            },
+            methods: {
+                newTask: function() {
+                    this.tasks.push(this.inputText)
+                    this.inputText = ''
+                },
+                deleteTask: function(index) {
+                    this.tasks.splice(index, 1)
+                }
+            },
+            computed: {
+            },
+            watcher: {
+            }
+        })
+    </script>
+  </body>
+</html>
