@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
+        <script src="./example.js"></script>
+        <style>
+            div { margin: 5px;padding: 5px;border: 1px solid black; }
+            .first { border-color: red; }
+            .second { border-color: blue; }
+        </style>
+    </head>
+    <body>
+        <hr />
+        <div id="app">
+            <my-example></my-example>
+            <p>{{ val }}</p>
+        </div>
+        
+        <script type="text/x-template" id="my-template">
+            <div class="first" @click="check">
+                <div class="title">{{ myValue }}</div>
+                <my-second-example></my-second-example>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="my-second-template">
+            <div class="second">
+                <p>Second example</p>
+            </div>
+        </script>
+
+        <script>
+            new Vue({
+                el: '#app',
+                components: {
+                    'my-example': myExample
+                },
+                data: {
+                    val: 'Coucou'
+                }
+            })
+        </script>
+
+        <hr />
+        <div id="app2">
+            <component :is="toLoad" v-on:set-comp="changeComponent"></component>
+        </div>
+        
+        <script type="text/x-template" id="my-comp1">
+            <div>
+                <p>Je suis le composant 1</p>
+                <button @click="setComponent">Charge comp 2</button>
+            </div>
+        </script>
+        <script type="text/x-template" id="my-comp2">
+            <div>
+                <p>Je suis le composant 2</p>
+                <button @click="setComponent">Charge comp 1</button>
+            </div>
+        </script>
+
+        <script>
+            new Vue({
+                el: '#app2',
+                components: {
+                    'my-comp1': myComp1,
+                    'my-comp2': myComp2
+                },
+                data: {
+                    toLoad: 'my-comp1'
+                },
+                methods: {
+                    changeComponent: function (event) {
+                        this.toLoad = event
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
